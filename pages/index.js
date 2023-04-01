@@ -2,10 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { useState } from "react";
+
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [step, setStep] = useState(0);
+
   return (
     <>
       <Head>
@@ -14,8 +18,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <div>
+          
+
+        <main>
+           <p>Step {step + 1}</p>
           <h1>Overview of Aurora</h1>
           <p>
             Weather-based fashion app that suggests what to wear based on real-time weather data and user preferences.
@@ -24,9 +30,52 @@ export default function Home() {
             Includes a feature that allows users to save their favorite outfits for future use.
             Helps users plan ahead for different weather conditions, making it easy to stay comfortable and stylish no matter the weather.
           </p>
+          
+        {step < 3 ? (
+        <button onClick={() => setStep(step + 1)}>Next</button>  
+        ) :
+        (
+          null
+        )}
 
-    </div>
-  </main>
+        {step == 0 ? (
+          <div>
+            <p>Onboarding</p>
+          </div>
+        ) : 
+        (
+          null
+        )
+        }
+        {step == 1 ? (
+          <div>
+            <p>Phone</p>
+          </div>
+        ) : 
+        (
+          null
+        )
+        }
+        {step == 2 ? (
+          <div>
+            <p>Permissions</p>
+          </div>
+        ) : 
+        (
+          null
+        )
+        }
+        {step == 3 ? (
+          <div>
+            <p>Results</p>
+          </div>
+        ) : 
+        (
+          null
+        )
+        }
+        <h1></h1>
+      </main>
     </>
   )
 }
