@@ -65,12 +65,20 @@ export default function Home() {
       height={"1000px"}
     />) : 
                   (null)}
+              
+              <main style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", height: "100vh", width: "100vw", margin: -8}}>
 
-              <main style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", width: "100vw", margin: -8}}>
+
+              
               {!successful ? (
+                <div style={{flexDirection: "row"}}>
+
               <div style={{backgroundColor: "#fff", width: "fit-content", padding: 8, borderRadius: 16, margin: 16}}>
 
                 <div>
+                <div style={{width: "100%" }} className='gif' >
+                <img style={{width: "100%", borderRadius:"16px"}} src="./vid.gif" alt="" />
+              </div>  
                   <h1 style={{margin: 0, fontSize: 36}}>Aurora</h1>
                   <p style={{fontSize: 18, maxWidth: 512}}>Morning mobile notifications to let you know what clothes to wear based on the weather in your zip code</p>
 
@@ -115,7 +123,7 @@ export default function Home() {
                   Submit
               </button>
           </div>
-        </div>) : (
+        </div></div>) : (
           <div style={{backgroundColor: "#fff", maxWidth: 612, width: "fit-content", padding: 16, borderRadius: 16, margin: 16}}>
              <p> 
               Dear beloved Hack Clubber,
@@ -138,6 +146,7 @@ Thomas,
 Aurora Admissions Committee</p>
           </div>
           )}
+              
       </main>
   </>
   )
