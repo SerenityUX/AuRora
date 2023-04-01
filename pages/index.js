@@ -27,7 +27,7 @@ export default function Home() {
       </Head>
           
 
-              <main style={{backgroundColor: "#000", display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", width: "100vw"}}>
+              <main style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", width: "100vw"}}>
               <div style={{backgroundColor: "#fff", width: "fit-content", padding: 8, borderRadius: 16, margin: "auto"}}>
                 <div>
                   <h1 style={{margin: 0}}>Aurora</h1>
