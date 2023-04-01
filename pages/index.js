@@ -23,33 +23,30 @@ export default function Home() {
       </Head>
           
 
-        <main>
-          <div>
-          <h1>Aurora</h1>
-            <ul>
-              <li>Weather-based fashion app that suggests what to wear based on real-time weather data and user preferences.</li>
-              <li>
-                Includes a feature that allows users to save their favorite outfits for future use.
-              </li>
-              <li> 
-                Helps users plan ahead for different weather conditions, making it easy to stay comfortable and stylish no matter the weather.
-              </li>
-            </ul>
+              <main style={{backgroundColor: "#000", display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", width: "100vw"}}>
+              <div style={{backgroundColor: "#fff", width: "fit-content", padding: 8, borderRadius: 16, margin: "auto"}}>
+                <div>
+                  <h1 style={{margin: 0}}>Aurora</h1>
+                  <ul>
+                    <li>Weather-based fashion app that suggests what to wear based on real-time weather data and user preferences.</li>
+                    <li>Includes a feature that allows users to save their favorite outfits for future use.</li>
+                    <li>Helps users plan ahead for different weather conditions, making it easy to stay comfortable and stylish no matter the weather.</li>
+                  </ul>
+                </div>
+          
+            <div>
+              <p>What's your Zipcode?</p>
+              <input type="zipcode" placeholder="Zip Code" value={zipCode} onChange={event => setZipCode(event.target.value)}/>
+            </div>
+            <div>
+              <p>What's your Phone Number?</p>
+            <input type="phone" placeholder="Phone Number" value={phone} onChange={event => setPhone(event.target.value)}/>
+            <button
+              onClick={() => console.log({user: {"zip": zipCode, "phone_number": phone}})}
+            >Submit</button>
           </div>
-
-        
-          <div>
-            <p>What's your Zipcode?</p>
-            <input type="zipcode" placeholder="Zip Code" value={zipCode} onChange={event => setZipCode(event.target.value)}/>
-          </div>
-          <div>
-            <p>What's your Phone Number?</p>
-          <input type="phone" placeholder="Phone Number" value={phone} onChange={event => setPhone(event.target.value)}/>
-          <button
-            onClick={() => console.log({user: {"zip": zipCode, "phone_number": phone}})}
-          >Submit</button>
+          <h1></h1>
         </div>
-        <h1></h1>
       </main>
     </>
   )
