@@ -39,8 +39,8 @@ export default function Home() {
               <p>Zipcode</p>
               <input type="zipcode" placeholder="Zip Code" value={zipCode} onChange={event => {
                 setZipCode(event.target.value)
-                if(zipcodes.lookup(event.target.value) != undefined) {
-                  setZipCodeState(zipcodes.lookup(event.target.value))
+                if(zipcodes?.lookup(event.target.value) != undefined) {
+                  setZipCodeState(zipcodes?.lookup(event.target.value))
                 } else {
                   setZipCodeState(undefined)
                 }
