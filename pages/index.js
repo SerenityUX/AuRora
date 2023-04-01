@@ -10,6 +10,53 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const [step, setStep] = useState(0);
 
+  const weatherRanges = [
+    {
+      "type": "Extremely Cold and Dangerous",
+      "temperatureRange": [
+        {
+          "min": -100,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "type": "Freezing",
+      "temperatureRange": [
+        {
+          "min": 0,
+          "max": 32
+        }
+      ]
+    },
+    {
+      "type": "Cool",
+      "temperatureRange": [
+        {
+          "min": 33,
+          "max": 70
+        }
+      ]
+    },
+    {
+      "type": "Warm",
+      "temperatureRange": [
+        {
+          "min": 71,
+          "max": 95
+        }
+      ]
+    },
+    {
+      "type": "Extremely Hot and Dangerous",
+      "temperatureRange": [
+        {
+          "min": 96,
+          "max": 150
+        }
+      ]
+    }
+  ]
   return (
     <>
       <Head>
