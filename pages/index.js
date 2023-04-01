@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const [step, setStep] = useState(0);
   const [selectedClothes, setSelectedClothes] = useState([]);
-
+  const [zipCode, setZipCode] = useState("");
   const [phone, setPhone] = useState("");
   const clothingOptions = [
     {
@@ -258,11 +258,28 @@ export default function Home() {
           
 
         <main>
+        {step < 4 ? (
            <p>Step {step + 1}</p>
-        
+        ) : (<p>Done</p>)}
           
-        {step < 3 ? (
-        <button onClick={() => setStep(step + 1)}>Next</button>  
+        {step < 4 ? (
+        <button onClick={() => {
+          if (step == 3) {
+            console.log({
+              "phone": phone,
+              "clothes": selectedClothes,
+              "styles": [],
+              "zipcode": zipCode
+
+            })
+            setStep(step + 1)
+          } else {
+            setStep(step + 1)
+
+          }
+        }}>
+          {step < 3 ? (
+          "Next") : ("Done") }</button>  
         ) :
         (
           null
@@ -294,14 +311,19 @@ export default function Home() {
               if (!selectedClothes.includes(option.name)) {
                 setSelectedClothes([...selectedClothes, option.name])
               } else {
-                console.log("ok")
-                setSelectedClothes(oldValues => {
-                  return oldValues.filter(optionChoice => optionChoice.name !== option.name)
-                })
+                setSelectedClothes((current) =>
+                  current.filter((object) => object != option.name)
+                );          
               }
               console.log(selectedClothes)
             }}>
-              <p>{option.name}</p>
+              {!selectedClothes.includes(option.name) ? (
+                <p>{option.name}</p>
+              ) : (
+                <p>
+                <strong>{option.name}</strong>
+                </p>
+              )}
             </div>
             )}
           </div>
@@ -312,8 +334,9 @@ export default function Home() {
         }
         {step == 2 ? (
           <div>
-            <p>Zipcode</p>
-
+            <h1>Zipcode</h1>
+            <p>What's your Zipcode?</p>
+            <input type="zipcode" placeholder="Zip Code" value={zipCode} onChange={event => setZipCode(event.target.value)}/>
           </div>
         ) : 
         (
@@ -322,9 +345,10 @@ export default function Home() {
         }
         {step == 3 ? (
           <div>
-            <p>Phone Number</p>
-
-          </div>
+            <h1>Phone</h1>
+            <p>What's your Phone Number?</p>
+          <input type="phone" placeholder="Phone Number" value={phone} onChange={event => setPhone(event.target.value)}/>
+        </div>
         ) : 
         (
           null
