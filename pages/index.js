@@ -13,6 +13,7 @@ export default function Home() {
   const weatherRanges = [
     {
       "type": "Extremely Cold and Dangerous",
+      "icon": "severe_cold",
       "temperatureRange": [
         {
           "min": -100,
