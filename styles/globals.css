@@ -24,3 +24,9 @@ a {
     color-scheme: dark;
   }
 }
+
+main {
+   background-image: url("./Fotor_AI_blur.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
