@@ -22,9 +22,13 @@ a {
 
 
 main {
-   background-image: url("./Fotor_AI_blur.png");
-    background-repeat: no-repeat;
-    background-position: center;
+  display: flex; 
+  justify-content: center;
+align-items: center;
+  flex-direction: column;
+  background-image: url("./Fotor_AI_blur.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media (prefers-color-scheme: dark) {

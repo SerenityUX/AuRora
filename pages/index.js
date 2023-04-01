@@ -33,8 +33,9 @@ export default function Home() {
       </Head>
           
 
-              <main style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", width: "100vw", margin: -8}}>
-              <div className="mainClass" style={{backgroundColor: "#fff", width: "fit-content", padding: 8, borderRadius: 16, margin: "auto"}}>
+              <main style={{  height: "100vh", width: "100vw", margin: -8}}>
+              <div style={{flexDirection: "row", display: "flex", alignItems: "center"}}>
+              <div style={{backgroundColor: "#fff", width: "fit-content", padding: 8, borderRadius: 16, margin: "auto"}}>
                 <div>
                   <h1 style={{margin: 0, fontSize: 36}}>Aurora</h1>
                   <p style={{fontSize: 18}}>Morning mobile notifications to let you know what<br/> clothes to wear based on the weather in your zip code</p>
@@ -79,9 +80,12 @@ export default function Home() {
                   Submit
               </button>
           </div>
-          <h1></h1>
+      </div>
+          <div style={{height: "100%", marginLeft:"30px" }} className='gif' >
+            <img style={{height: "100%", borderRadius:"16px"}} src="./vid.gif" alt="" />
+          </div>
         </div>
       </main>
-    </>
+  </>
   )
 }
