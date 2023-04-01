@@ -36,7 +36,7 @@ export default function Home() {
                 </div>
           
             <div>
-              <p>What's your Zipcode?</p>
+              <p>Zipcode</p>
               <input type="zipcode" placeholder="Zip Code" value={zipCode} onChange={event => {
                 setZipCode(event.target.value)
                 if(zipcodes.lookup(event.target.value) != undefined) {
@@ -49,7 +49,7 @@ export default function Home() {
             <p>{zipCodeState?.city}{zipCodeState?.state != undefined ? (",") : ("")} {zipCodeState?.state}</p>
             </div>
             <div>
-              <p>What's your Phone Number?</p>
+              <p>Phone Number</p>
               <PhoneInput
                 placeholder="Enter phone number"
                 value={phone}
