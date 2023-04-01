@@ -56,6 +56,7 @@ export default function Home() {
                 } else {
                   setZipCodeState(undefined)
                 }
+                
               }
             }/>
             <p style={{fontSize: 12, margin: 0}}>{zipCodeState?.city}{zipCodeState?.state != undefined ? (",") : ("")} {zipCodeState?.state}</p>
