@@ -44,6 +44,7 @@ export default function Home() {
                 } else {
                   setZipCodeState(undefined)
                 }
+                
               }
             }/>
             <p>{zipCodeState?.city}{zipCodeState?.state != undefined ? (",") : ("")} {zipCodeState?.state}</p>
