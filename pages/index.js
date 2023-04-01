@@ -14,7 +14,6 @@ export default function Home() {
   const weatherRanges = [
     {
       "type": "Extremely Cold and Dangerous",
-      "icon": "severe_cold",
       "temperatureRange": 
         {
           "min": -100,
@@ -71,17 +70,7 @@ export default function Home() {
 
         <main>
            <p>Step {step + 1}</p>
-         
-          <h1>Overview of Aurrora</h1>
-            <ul>
-              <li>Weather-based fashion app that suggests what to wear based on real-time weather data and user preferences.</li>
-              <li>
-                Includes a feature that allows users to save their favorite outfits for future use.
-              </li>
-              <li> 
-                Helps users plan ahead for different weather conditions, making it easy to stay comfortable and stylish no matter the weather.
-              </li>
-            </ul>
+        
           
         {step < 3 ? (
         <button onClick={() => setStep(step + 1)}>Next</button>  
@@ -92,7 +81,16 @@ export default function Home() {
 
         {step == 0 ? (
           <div>
-            <p>Onboarding</p>
+          <h1>Overview of Aurora</h1>
+            <ul>
+              <li>Weather-based fashion app that suggests what to wear based on real-time weather data and user preferences.</li>
+              <li>
+                Includes a feature that allows users to save their favorite outfits for future use.
+              </li>
+              <li> 
+                Helps users plan ahead for different weather conditions, making it easy to stay comfortable and stylish no matter the weather.
+              </li>
+            </ul>
           </div>
         ) : 
         (
@@ -101,7 +99,8 @@ export default function Home() {
         }
         {step == 1 ? (
           <div>
-            <p>Phone</p>
+            <h1>Select Clothes You Like</h1>
+
           </div>
         ) : 
         (
@@ -110,7 +109,8 @@ export default function Home() {
         }
         {step == 2 ? (
           <div>
-            <p>Permissions</p>
+            <p>Zipcode</p>
+
           </div>
         ) : 
         (
@@ -119,7 +119,8 @@ export default function Home() {
         }
         {step == 3 ? (
           <div>
-            <p>Results</p>
+            <p>Phone Number</p>
+            
           </div>
         ) : 
         (
