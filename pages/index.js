@@ -2,10 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { useState } from "react";
+
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [step, setStep] = useState(0);
+
   return (
     <>
       <Head>
@@ -15,9 +19,51 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <p>
-          Alright
-        </p>
+        <p>Step {step + 1}</p>
+        {step < 3 ? (
+        <button onClick={() => setStep(step + 1)}>Next</button>  
+        ) :
+        (
+          null
+        )}
+
+        {step == 0 ? (
+          <div>
+            <p>Onboarding</p>
+          </div>
+        ) : 
+        (
+          null
+        )
+        }
+        {step == 1 ? (
+          <div>
+            <p>Phone</p>
+          </div>
+        ) : 
+        (
+          null
+        )
+        }
+        {step == 2 ? (
+          <div>
+            <p>Permissions</p>
+          </div>
+        ) : 
+        (
+          null
+        )
+        }
+        {step == 3 ? (
+          <div>
+            <p>Results</p>
+          </div>
+        ) : 
+        (
+          null
+        )
+        }
+        <h1></h1>
       </main>
     </>
   )
