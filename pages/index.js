@@ -34,7 +34,7 @@ export default function Home() {
           
 
               <main style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", width: "100vw", margin: -8}}>
-              <div style={{backgroundColor: "#fff", width: "fit-content", padding: 8, borderRadius: 16, margin: "16"}}>
+              <div className="mainClass" style={{backgroundColor: "#fff", width: "fit-content", padding: 8, borderRadius: 16, margin: "auto"}}>
                 <div>
                   <h1 style={{margin: 0, fontSize: 36}}>Aurora</h1>
                   <p style={{fontSize: 18}}>Morning mobile notifications to let you know what<br/> clothes to wear based on the weather in your zip code</p>
