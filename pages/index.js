@@ -9,53 +9,54 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [step, setStep] = useState(0);
+  const [phone, setPhone] = useState("");
 
   const weatherRanges = [
     {
       "type": "Extremely Cold and Dangerous",
       "icon": "severe_cold",
-      "temperatureRange": [
+      "temperatureRange": 
         {
           "min": -100,
           "max": 0
         }
-      ]
+      
     },
     {
       "type": "Freezing",
-      "temperatureRange": [
+      "temperatureRange": 
         {
           "min": 0,
           "max": 32
         }
-      ]
+      
     },
     {
       "type": "Cool",
-      "temperatureRange": [
+      "temperatureRange": 
         {
           "min": 33,
           "max": 70
         }
-      ]
+      
     },
     {
       "type": "Warm",
-      "temperatureRange": [
+      "temperatureRange": 
         {
           "min": 71,
           "max": 95
         }
-      ]
+      
     },
     {
       "type": "Extremely Hot and Dangerous",
-      "temperatureRange": [
+      "temperatureRange": 
         {
           "min": 96,
           "max": 150
         }
-      ]
+      
     }
   ]
   return (
@@ -70,7 +71,7 @@ export default function Home() {
 
         <main>
            <p>Step {step + 1}</p>
-          <h1>Overview of Aurora</h1>
+          <h1>Overview of Aurrora</h1>
           <p>
             Weather-based fashion app that suggests what to wear based on real-time weather data and user preferences.
             Allows users to input their location, select their preferred style, and customize their recommendations based on color, fabric, and pattern preferences.
