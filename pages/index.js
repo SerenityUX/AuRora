@@ -70,14 +70,17 @@ export default function Home() {
 
         <main>
            <p>Step {step + 1}</p>
+         
           <h1>Overview of Aurora</h1>
-          <p>
-            Weather-based fashion app that suggests what to wear based on real-time weather data and user preferences.
-            Allows users to input their location, select their preferred style, and customize their recommendations based on color, fabric, and pattern preferences.
-            Provides recommendations for tops, bottoms, outerwear, and accessories based on current weather conditions, including temperature, humidity, and wind speed.
-            Includes a feature that allows users to save their favorite outfits for future use.
-            Helps users plan ahead for different weather conditions, making it easy to stay comfortable and stylish no matter the weather.
-          </p>
+            <ul>
+              <li>Weather-based fashion app that suggests what to wear based on real-time weather data and user preferences.</li>
+              <li>
+                Includes a feature that allows users to save their favorite outfits for future use.
+              </li>
+              <li> 
+                Helps users plan ahead for different weather conditions, making it easy to stay comfortable and stylish no matter the weather.
+              </li>
+            </ul>
           
         {step < 3 ? (
         <button onClick={() => setStep(step + 1)}>Next</button>  
