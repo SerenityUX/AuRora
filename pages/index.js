@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useState } from "react";
-
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +12,10 @@ export default function Home() {
   const [step, setStep] = useState(0);
   const [selectedClothes, setSelectedClothes] = useState([]);
   const [zipCode, setZipCode] = useState("");
+  const [zipCodeState, setZipCodeState] = useState("");
+
   const [phone, setPhone] = useState("");
+  var zipcodes = require('zipcodes');
 
   return (
     <>
@@ -27,21 +31,31 @@ export default function Home() {
               <div style={{backgroundColor: "#fff", width: "fit-content", padding: 8, borderRadius: 16, margin: "auto"}}>
                 <div>
                   <h1 style={{margin: 0}}>Aurora</h1>
-                  <ul>
-                    <li>Weather-based fashion app that suggests what to wear based on real-time weather data and user preferences.</li>
-                    <li>Includes a feature that allows users to save their favorite outfits for future use.</li>
-                    <li>Helps users plan ahead for different weather conditions, making it easy to stay comfortable and stylish no matter the weather.</li>
-                  </ul>
+                  <p>Morning mobile notifications to let you know what<br/> clothes to wear based on the weather in your zip code</p>
+                  
                 </div>
           
             <div>
               <p>What's your Zipcode?</p>
-              <input type="zipcode" placeholder="Zip Code" value={zipCode} onChange={event => setZipCode(event.target.value)}/>
+              <input type="zipcode" placeholder="Zip Code" value={zipCode} onChange={event => {
+                setZipCode(event.target.value)
+                if(zipcodes.lookup(event.target.value) != undefined) {
+                  setZipCodeState(zipcodes.lookup(event.target.value))
+                } else {
+                  setZipCodeState(undefined)
+                }
+              }
+            }/>
+            <p>{zipCodeState?.city}{zipCodeState?.state != undefined ? (",") : ("")} {zipCodeState?.state}</p>
             </div>
             <div>
               <p>What's your Phone Number?</p>
-            <input type="phone" placeholder="Phone Number" value={phone} onChange={event => setPhone(event.target.value)}/>
-            <button
+              <PhoneInput
+                placeholder="Enter phone number"
+                value={phone}
+                defaultCountry="US"
+                onChange={setPhone}/>
+              <button
               onClick={() => console.log({user: {"zip": zipCode, "phone_number": phone}})}
             >Submit</button>
           </div>
