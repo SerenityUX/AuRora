@@ -26,7 +26,7 @@ export default function Home() {
   const handleSubmit = async () => {
 
     try {
-      const response = await fetch('https://2fe5-38-122-127-226.ngrok.io/api/users/', {
+      const response = await fetch('https://api.auroraalert.cc/users/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
