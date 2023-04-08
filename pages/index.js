@@ -26,7 +26,7 @@ export default function Home() {
   const handleSubmit = async () => {
 
     try {
-      const response = await fetch('http://api.auroraalert.cc/api/users/', {
+      const response = await fetch('http://api.auroraalert.cc/users/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
